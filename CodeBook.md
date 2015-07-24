@@ -15,16 +15,17 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 2. Dataset. The dataset includes the following files:
 　　2.1: 'README.txt'
-　　2.2: ‘features_info.txt': Shows information about the variables used on the 			feature vector. The features selected for this database come from the 			accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and 				tGyro-XYZ. 
+　　2.2: ‘features_info.txt': Shows information about the variables used on the feature vector. The features selected for        this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
 　　2.3: 'features.txt': List of all 561 features, for example 1 tBodyAcc-mean()-X
 　　2 tBodyAcc-mean()-Y3 tBodyAcc-mean()-Z
-　　2.4: 'activity_labels.txt': Links the class labels with their activity name. For 			example, 
+　　2.4: 'activity_labels.txt': Links the class labels with their activity name. For example, 
 　　1WALKING2WALKING_UPSTAIRS3WALKING_DOWNSTAIRS4SITTIN	G5STANDING6LAYING
 　　2.5: 'train/X_train.txt': Training set. Total 7352 obs with 561 variables
 　　2.6: 'train/y_train.txt': Training labels. Total 7352 obs with 1 variables
 　　2.7: 'test/X_test.txt': Test set. Total 2947 obs with 561 variables
 　　2.8: 'test/y_test.txt': Test labels. Total 2947 obs with 1 variables
-　　2.9: ‘subject_train.txt': Each row identifies the subject who performed the 	activity for each window sample. Its range is from 1 to 30
+　　2.9: ‘subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
+
 Project Description
 This CodeBook is for the course project of Getting and Cleaning Data, where a student is requested to create one R script called run_analysis.R that does the following. 
 1. Merges the training and the test sets to create one data set.
@@ -35,22 +36,22 @@ This CodeBook is for the course project of Getting and Cleaning Data, where a st
 The tidy data set created in step 5 of the instructions is upload as a txt file, named “tidy-data.txt.”
 
 Tidy Data Creation
-Unzip the dataset source (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and put in your local working directory for R
-Unzip that file then you should see a folder, named “UCI HAR Dataset” with several txt files and two sub-folders, test and train
-Create a R script file and name it as ‘run_analysis.R’
-Reads a file in table format and creates a data frame from it, read.table()
-Combine by rows to form a new dataset, rbind()
+1. Unzip the dataset source (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and put in your local working directory for R
+2. Unzip that file then you should see a folder, named “UCI HAR Dataset” with several txt files and two sub-folders, test and train
+3. Create a R script file and name it as ‘run_analysis.R’
+4. Reads a file in table format and creates a data frame from it, read.table()
+5. Combine by rows to form a new dataset, rbind()
 The above functions produces 10,299 obs
-Remove unneeded objects from Global Environment, with rm() function
+6. Remove unneeded objects from Global Environment, with rm() function
 Search for matches to argument, mean and std, in this exercise, to extract required data, grep()
 The above function generates required measurements of 66 (66 out of 561 attributes are measurements on the mean and stand deviation)
-Apply descriptive activity names on activity_labels.txt 
-Character Translation using descriptive activity names to name the activities in the data set, tolower()
-Replace all matches of a string with gsub() function
-Retrieve the column names of a matrix-like object using colnames() function
-Write data frame to a file with write.table() function (File Name: mean-std.txt)
-Create a second dataset by compute average summary statistics of each measurement for each activity using aggregate() function
-Write data frame to a file of “tidy-data.txt” and upload the output (File Name: tidy-data.txt)
+7. Apply descriptive activity names on activity_labels.txt 
+8. Character Translation using descriptive activity names to name the activities in the data set, tolower()
+9. Replace all matches of a string with gsub() function
+10. Retrieve the column names of a matrix-like object using colnames() function
+11. Write data frame to a file with write.table() function (File Name: mean-std.txt)
+12. Create a second dataset by compute average summary statistics of each measurement for each activity using aggregate() function
+13. Write data frame to a file of “tidy-data.txt” and upload the output (File Name: tidy-data.txt)
 
 Description of mean-std.txt 
 Name: mean-std.txt
